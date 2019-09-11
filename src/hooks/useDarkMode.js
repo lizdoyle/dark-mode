@@ -3,19 +3,22 @@ import {useEffect} from "react";
 
 function useDarkMode() {
 
+    const darkmode = true;
+
     const [nighttime, setNighttime ] = useLocalStorage(darkmode);
 
     useEffect(() => {
-        const body = window.document.body;
+        
 
         if (darkmode) {
-            body.classList.add('dark-mode');
+            document.body.classList.add('dark-mode');
         }
         else {
-            body.classList.remove('dark-mode');
+            document.body.classList.remove('dark-mode');
         }
 
-    }, [nighttime]);
+    }, [darkmode]);
+
 
     return [nighttime, setNighttime]
 }
