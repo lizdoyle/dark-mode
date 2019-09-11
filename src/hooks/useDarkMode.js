@@ -5,7 +5,7 @@ function useDarkMode() {
 
     const [nighttime, setNighttime ] = useLocalStorage(darkmode);
 
-    useEffect(() {
+    useEffect(() => {
         const body = window.document.body;
 
         if (darkmode) {
@@ -17,9 +17,7 @@ function useDarkMode() {
 
     }, [nighttime]);
 
-    return (
-        <div></div>
-    )
+    return [nighttime, setNighttime]
 }
 
 export default useDarkMode
